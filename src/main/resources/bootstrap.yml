@@ -1,0 +1,23 @@
+server:
+  port: 8100
+spring:
+  application:
+    name: cloudconfig
+  cloud:
+    config:
+      uri: http://localhost:8888/
+#      profile: prod
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - refresh
+  endpoint:
+    health:
+      show-details: always
+health:
+  config:
+    enabled: true
